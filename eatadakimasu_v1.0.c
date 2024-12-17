@@ -78,7 +78,7 @@ void initProg(){
 }
 
 /*clears the current contents of the screen; for scene transitions
-also redisplays box and refereshes window contents*/
+also redisplays box and refreshes window contents*/
 void clearWin(){
     werase(win);
 
@@ -146,7 +146,7 @@ void introScene(){
     exitSceneSig();
 }
 
-//excecutes message scene depending on status arguement
+//executes message scene depending on status argument
 void messageScene(bool winStatus){
     //declare messages
     const char *winMsg = "congrats, you won :)!";
@@ -182,7 +182,7 @@ void inputHandling(){
     int pressed = wgetch(win);
 
     /*changes directions according to key pressed
-    also includes input validation for key pressed that is in the opposite direction as the current direction of the snake
+    also includes input validation for keys pressed in the opposite direction as the current direction of the snake
     the input validation is only applicable if the snake has a body*/
     if (pressed == KEY_LEFT) {
         if (direction.x == 1 && score != 0) {
@@ -254,7 +254,7 @@ void spawnFood(food *foodType){
     }
 }
 
-//despawns the fruit that has reached it's maximum time
+//despawns the fruit that has reached its maximum time
 void despawnFood(food *foodType){
     //checks if the food is spawned and if the time since it has spawned is greater than or equal to the time that it is supposed to stay in-game
     if((foodType->active && foodType->despawnTime > 0) && (difftime(time(NULL), foodType->spawnTime) >= foodType->despawnTime)){
@@ -276,7 +276,7 @@ void foodCollision(food *foodType){
     sprintf(healthDisp, "HEALTH: %d", health);
 
     /*conditions for winning or losing
-    player wins if the player reaches a score that is greater than the set maxscore
+    player wins if the player reaches a score that is greater than the set max score
     player loses if the player's health reaches to or below 0*/
     if(score >= maxSCORE){
             isRunning = false;
@@ -315,7 +315,7 @@ void updateParam(){
         foodCollision(&foods[i]);
     }
 
-    //handles spawnning and despawnning food
+    //handles spawning and despawning food
     for (int i = 0; i < 3; i++) {
         spawnFood(&foods[i]);
         despawnFood(&foods[i]);
@@ -324,7 +324,7 @@ void updateParam(){
     usleep(frameTIME);
 }
 
-//display all the displayable for the game scene
+//display all the elements of the game scene
 void displayGame(){
     //clear screens for every game update
     werase(win);
@@ -381,7 +381,7 @@ void quitProg(){
 	exit(0);
 }
 
-//main functino where the functions will be ran
+//main function where the functions will be executed
 int main(){
     //starts with initializing the window screen
     initProg();
