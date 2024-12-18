@@ -112,9 +112,9 @@ void introScene(){
     //declare messages
     const char *title = "EATadakimasu!";
     const char *details = "a snake game rendition for cmsc 11";
-    const char *names = "by campomanes, dela cruz, & latata";
+    const char *names = "by campomanes, dela cruz, & lalata";
     const char *instruct = "use your arrow keys to move!";
-    const char *types[4] = {"food types:", "+ - adds 1 to score", "@ - removes 1 to health", "O - adds 5 to score"};
+    const char *types[4] = {"food types:", "sushi '+' - adds 1 to score", "rat '@' - removes 1 to health", "takoyaki 'O' - adds 5 to score"};
     const char *con = "PRESS [SPACEBAR] TO CONTINUE";
     const char *dedic = "inspired by @abuharth on github";
 
